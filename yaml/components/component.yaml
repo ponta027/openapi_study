@@ -1,0 +1,24 @@
+components:
+  schemas:
+    SimpleUser:
+      properties:
+        id:
+          type: integer
+          description: ユーザーID
+        name:
+          type: string
+          description: ユーザー名
+    User:
+      properties:
+        id:
+          type: integer
+          description: ユーザーID
+        name:
+          type: string
+          description: ユーザー名
+        birthday:
+          type: string
+          description: 生年月日
+          example: '2001-02-03'
+
+

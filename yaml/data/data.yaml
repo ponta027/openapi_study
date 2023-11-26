@@ -1,0 +1,35 @@
+openapi: 3.1.0
+info:
+tags:
+  - name: "data"
+paths:
+  data:
+    get:
+      summary: "dataを取得する"
+      operationId: get_data
+      tags:
+        - data
+      parameters:
+        - name: entitycollection
+          in: path
+          description: "-"
+          example: A
+          required: true
+          schema:
+            type: String
+            enum: ["A","B"]
+        - name: resource 
+          in: path
+          description: "-"
+          example: A
+          required: true
+          schema:
+            type: String
+            enum: ["A","B"]
+
+      responses:
+        '200':
+          $ref: "./response.yaml#/components/schemas/user_response"
+        default:
+          description: Unexpected error
+            #

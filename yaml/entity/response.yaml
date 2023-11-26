@@ -1,0 +1,10 @@
+components:
+  schemas:
+    user_response:
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            $ref: "../components/component.yaml#/components/schemas/User"
+
+

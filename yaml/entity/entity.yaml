@@ -1,0 +1,26 @@
+openapi: 3.1.0
+info:
+tags:
+  - name: "Entity"
+paths:
+  entitycollection:
+    get:
+      summary: Entity Collectionを取得する
+      operationId: getEntityCollection
+      tags:
+        - users
+      parameters:
+        - name: entitycollection
+          in: path
+          description: Entity Collection
+          example: Area
+          required: true
+          schema:
+            type: String
+            enum: ["Area","Components"]
+      responses:
+        '200':
+          $ref: "./response.yaml#/components/schemas/user_response"
+        default:
+          description: Unexpected error
+            #

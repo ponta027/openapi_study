@@ -1,0 +1,45 @@
+openapi: 3.1.0
+info:
+  description: "sample"
+  version: "1.0.0"
+  title: "openapi-sample"
+tags:
+  - name: "sample"
+paths:
+  /ip:
+    $ref: "./ip/ip.yaml#paths/~1ip"
+  /example:
+    get:
+      summary: Get Example
+      parameters:
+        - $ref: '#/components/parameters/param1'
+        - $ref: '#/components/parameters/param2'
+      responses:
+        '200':
+          description: Successful response
+  /users/{userId}:
+    $ref: "./user/user.yaml#paths/~1users_userId"
+  /{entitycollection}:
+    $ref: "./entity/entity.yaml#paths/entitycollection"
+  /{entitycollection}/{resource}/data:
+    $ref: "./data/data.yaml#paths/data"
+
+components:
+  parameters:
+    param1:
+      name: id
+      in: query
+      description: ID of the resource
+      required: true
+      schema:
+        type: integer
+        format: int64
+
+    param2:
+      name: name
+      in: query
+      description: Name of the resource
+      required: true
+      schema:
+        type: string
+

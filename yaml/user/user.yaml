@@ -1,0 +1,29 @@
+openapi: 3.1.0
+info:
+  description: "GET/POST IPv4 Address"
+  version: "1.0.0"
+  title: "openapit"
+tags:
+  - name: "IP"
+paths:
+  /users_userId:
+    get:
+      summary: ユーザーを取得する
+      operationId: getUserById
+      tags:
+        - users
+      parameters:
+        - name: userId
+          in: path
+          description: ユーザーID
+          example: 1
+          required: true
+          schema:
+            type: integer
+            enum: [1,2,3,4]
+      responses:
+        '200':
+          $ref: "./response.yaml#/components/schemas/user_response"
+        default:
+          description: Unexpected error
+            #
